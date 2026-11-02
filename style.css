@@ -606,3 +606,412 @@ img {
   }
 }
 
+/* ==============================
+   CUSTOMER REVIEWS SECTION
+============================== */
+
+.reviews-section {
+  background: #201e1b;
+  padding: 90px 0;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.review-card {
+  background: #302d29;
+  border: 1px solid #514c45;
+  border-radius: 14px;
+  padding: 30px 25px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: #e88b35;
+}
+
+.review-stars {
+  color: #f5a623;
+  font-size: 23px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.review-card p {
+  color: #e6dfd5;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.review-card h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.review-card span {
+  color: #e88b35;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* TABLET AND MOBILE RESPONSIVENESS */
+
+@media (max-width: 900px) {
+  .reviews-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-section {
+    padding: 60px 0;
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .review-card {
+    padding: 25px 20px;
+  }
+}
+
+/* ==============================
+   FREQUENTLY ASKED QUESTIONS
+============================== */
+
+.faq-section {
+  background: #292621;
+  padding: 90px 0;
+}
+
+.faq-container {
+  max-width: 850px;
+  margin: 45px auto 0;
+}
+
+.faq-item {
+  background: #201e1b;
+  border: 1px solid #514c45;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: #e88b35;
+}
+
+.faq-item summary {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 22px 25px;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 55px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: #e88b35;
+  font-size: 25px;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  color: #c9c1b6;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 0 25px 22px;
+  margin: 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 60px 0;
+  }
+
+  .faq-item summary {
+    font-size: 15px;
+    padding: 18px 45px 18px 18px;
+  }
+
+  .faq-item summary::after {
+    right: 18px;
+  }
+
+  .faq-item p {
+    font-size: 14px;
+    padding: 0 18px 18px;
+  }
+}
+/* ==============================
+   FOOD GALLERY SECTION
+============================== */
+
+.gallery-section {
+  background: #201e1b;
+  padding: 90px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.gallery-item {
+  height: 260px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid #514c45;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+  .gallery-section {
+    padding: 60px 0;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .gallery-item {
+    height: 230px;
+  }
+}
+/* FLOATING WHATSAPP BUTTON */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: #25D366;
+  color: #ffffff;
+  padding: 13px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-5px);
+}
+
+.floating-whatsapp strong {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    right: 15px;
+    bottom: 15px;
+    padding: 11px 16px;
+  }
+}
+/* BACK TO TOP BUTTON */
+
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 105px;
+  z-index: 9998;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e88b35;
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: #c96f20;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    right: 20px;
+    bottom: 85px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ==============================
+   SPECIAL DISCOUNT BANNER
+============================== */
+
+.discount-section {
+  background: #292621;
+  padding: 75px 0;
+}
+
+.discount-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  background: #201e1b;
+  border: 1px solid #514c45;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.discount-text .eyebrow {
+  color: #e88b35;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.discount-text h2 {
+  color: #ffffff;
+  font-size: 42px;
+  margin: 15px 0 5px;
+}
+
+.discount-text h2 span {
+  color: #e88b35;
+}
+
+.discount-text h3 {
+  color: #ffffff;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.discount-text > p:not(.eyebrow) {
+  color: #c9c1b6;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.discount-text small {
+  display: block;
+  color: #aaa39a;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.discount-image {
+  height: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.discount-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.discount-image img:hover {
+  transform: scale(1.05);
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 800px) {
+  .discount-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .discount-text h2 {
+    font-size: 34px;
+  }
+
+  .discount-image {
+    height: 280px;
+  }
+}
+
+@media (max-width: 550px) {
+  .discount-section {
+    padding: 50px 0;
+  }
+
+  .discount-content {
+    padding: 22px;
+  }
+
+  .discount-text h2 {
+    font-size: 30px;
+  }
+
+  .discount-text h3 {
+    font-size: 21px;
+  }
+
+  .discount-image {
+    height: 220px;
+  }
+}
