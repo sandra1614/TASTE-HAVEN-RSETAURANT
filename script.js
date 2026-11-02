@@ -274,4 +274,3 @@ if (yearElement) {
 // INITIAL CART DISPLAY
 
 updateCart();
-
