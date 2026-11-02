@@ -12,7 +12,6 @@ const navLinks = document.getElementById("navLinks");
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", function () {
     navLinks.classList.toggle("active");
-
     const isOpen = navLinks.classList.contains("active");
     menuToggle.setAttribute("aria-expanded", isOpen);
   });
@@ -55,7 +54,7 @@ filterButtons.forEach(function (button) {
 });
 
 
-// 3. SHOPPING CART
+// 3. SHOPPING CART AND DISCOUNT
 
 let cart = [];
 
@@ -66,12 +65,23 @@ const cartTotal = document.getElementById("cartTotal");
 const checkoutButton = document.getElementById("checkoutButton");
 const clearCartButton = document.getElementById("clearCartButton");
 
+// 20% discount
+const DISCOUNT_RATE = 0.20;
+
+// Create a place to display the discount details
+const discountSummary = document.createElement("div");
+discountSummary.id = "discountSummary";
+
+if (cartTotal) {
+  cartTotal.insertAdjacentElement("afterend", discountSummary);
+}
+
 
 // DISPLAY CART
 
 function updateCart() {
   let totalItems = 0;
-  let totalPrice = 0;
+  let originalTotal = 0;
 
   cartItems.innerHTML = "";
 
@@ -83,7 +93,7 @@ function updateCart() {
     const subtotal = item.price * item.quantity;
 
     totalItems += item.quantity;
-    totalPrice += subtotal;
+    originalTotal += subtotal;
 
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
@@ -106,8 +116,27 @@ function updateCart() {
     cartItems.appendChild(cartItem);
   });
 
+  // Calculate the discount
+  const discountAmount = originalTotal * DISCOUNT_RATE;
+
+  // Calculate the amount customer will pay
+  const finalTotal = originalTotal - discountAmount;
+
   cartCount.textContent = totalItems;
-  cartTotal.textContent = totalPrice.toFixed(2);
+
+  // Show discounted total
+  cartTotal.textContent = finalTotal.toFixed(2);
+
+  // Show original price and savings
+  discountSummary.innerHTML = `
+    <p>Original Total: $${originalTotal.toFixed(2)}</p>
+    <p class="discount-saving">
+      20% Discount: -$${discountAmount.toFixed(2)}
+    </p>
+    <p class="final-total">
+      Amount to Pay: $${finalTotal.toFixed(2)}
+    </p>
+  `;
 
   checkoutButton.disabled = cart.length === 0;
   clearCartButton.disabled = cart.length === 0;
@@ -170,9 +199,7 @@ cartItems.addEventListener("click", function (event) {
 // 6. CLEAR ENTIRE CART
 
 clearCartButton.addEventListener("click", function () {
-  if (cart.length === 0) {
-    return;
-  }
+  if (cart.length === 0) return;
 
   const confirmClear = confirm(
     "Are you sure you want to clear your cart?"
@@ -195,11 +222,9 @@ const customerNote = document.getElementById("customerNote");
 
 // 8. WHATSAPP CHECKOUT
 
-// Your Nigerian WhatsApp number
 const restaurantWhatsApp = "2347042302823";
 
 checkoutButton.addEventListener("click", function () {
-
   if (cart.length === 0) {
     alert("Please add food to your cart first.");
     return;
@@ -228,7 +253,7 @@ checkoutButton.addEventListener("click", function () {
 
   orderMessage += "\nMY ORDER\n";
 
-  let total = 0;
+  let originalTotal = 0;
 
   cart.forEach(function (item) {
     const subtotal = item.price * item.quantity;
@@ -237,10 +262,16 @@ checkoutButton.addEventListener("click", function () {
       item.name + " x " + item.quantity +
       " = $" + subtotal.toFixed(2) + "\n";
 
-    total += subtotal;
+    originalTotal += subtotal;
   });
 
-  orderMessage += "\nTOTAL: $" + total.toFixed(2);
+  // Calculate discount and final payment
+  const discountAmount = originalTotal * DISCOUNT_RATE;
+  const finalTotal = originalTotal - discountAmount;
+
+  orderMessage += "\nOriginal Total: $" + originalTotal.toFixed(2);
+  orderMessage += "\n20% Discount: -$" + discountAmount.toFixed(2);
+  orderMessage += "\nFINAL AMOUNT TO PAY: $" + finalTotal.toFixed(2);
   orderMessage += "\n\nPlease confirm my order. Thank you!";
 
   const whatsappURL =
