@@ -1,1 +1,283 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taste Haven Restaurant serves delicious meals made with love. Explore our menu and order today.">
+  <title>Taste Haven Restaurant | Good Food, Great Moments</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">Taste<span>Haven</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#menu" class="nav-button">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content container">
+      <p class="eyebrow">WELCOME TO TASTE HAVEN</p>
+      <h1>Good Food.<br><span>Great Moments.</span></h1>
+      <p>
+        Enjoy delicious meals, fresh ingredients and unforgettable
+        dining experiences.
+      </p>
+      <a href="#menu" class="main-button">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section class="menu-section section-padding" id="menu">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">OUR SPECIALTIES</p>
+        <h2>Explore Our Menu</h2>
+        <p>Freshly prepared meals made to satisfy your cravings.</p>
+      </div>
+
+      <!-- MENU FILTERS -->
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">All Meals</button>
+        <button class="filter-btn" data-filter="main">Main Dishes</button>
+        <button class="filter-btn" data-filter="salad">Salads</button>
+        <button class="filter-btn" data-filter="dessert">Desserts</button>
+      </div>
+
+      <!-- SHOPPING CART -->
+      <div class="cart-summary">
+
+        <h3>🛒 Your Order</h3>
+
+        <div id="cartItems">
+          <p>Your cart is empty.</p>
+        </div>
+
+        <p>Items: <span id="cartCount">0</span></p>
+        <p>Total: $<span id="cartTotal">0.00</span></p>
+
+        <!-- CUSTOMER DELIVERY DETAILS -->
+        <div class="customer-checkout">
+
+          <h3>Delivery Details</h3>
+
+          <label for="customerName">Full Name</label>
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your full name"
+            required
+          >
+
+          <label for="customerPhone">Phone Number</label>
+          <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Enter your phone number"
+            required
+          >
+
+          <label for="customerAddress">Delivery Address</label>
+          <textarea
+            id="customerAddress"
+            placeholder="Enter your full delivery address"
+            required
+          ></textarea>
+
+          <label for="customerNote">Special Instructions (Optional)</label>
+          <textarea
+            id="customerNote"
+            placeholder="Any extra instructions?"
+          ></textarea>
+
+        </div>
+
+        <!-- CLEAR CART BUTTON -->
+        <button id="clearCartButton" class="remove-btn">
+          Clear Cart
+        </button>
+
+        <!-- WHATSAPP CHECKOUT -->
+        <button id="checkoutButton" class="main-button">
+          Checkout on WhatsApp
+        </button>
+
+      </div>
+
+      <!-- FOOD MENU -->
+      <div class="menu-grid">
+
+        <!-- SALAD -->
+        <article class="food-card" data-category="salad">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700"
+            alt="Fresh vegetable salad">
+          <div class="food-info">
+            <h3>Fresh Garden Salad</h3>
+            <p>Fresh vegetables with a delicious dressing.</p>
+            <div class="food-bottom">
+              <span class="price">$12.00</span>
+              <button class="order-button" data-food="Fresh Garden Salad" data-price="12">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- BURGER -->
+        <article class="food-card" data-category="main">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"
+            alt="Delicious beef burger">
+          <div class="food-info">
+            <h3>Classic Beef Burger</h3>
+            <p>Juicy beef burger with fresh toppings.</p>
+            <div class="food-bottom">
+              <span class="price">$15.00</span>
+              <button class="order-button" data-food="Classic Beef Burger" data-price="15">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PASTA -->
+        <article class="food-card" data-category="main">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=700"
+            alt="Italian pasta">
+          <div class="food-info">
+            <h3>Italian Pasta</h3>
+            <p>Delicious pasta prepared with rich sauce.</p>
+            <div class="food-bottom">
+              <span class="price">$18.00</span>
+              <button class="order-button" data-food="Italian Pasta" data-price="18">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- RICE -->
+        <article class="food-card" data-category="main">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700"
+            alt="Healthy rice bowl">
+          <div class="food-info">
+            <h3>Special Rice Bowl</h3>
+            <p>A tasty combination of rice and fresh ingredients.</p>
+            <div class="food-bottom">
+              <span class="price">$14.00</span>
+              <button class="order-button" data-food="Special Rice Bowl" data-price="14">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- DESSERT -->
+        <article class="food-card" data-category="dessert">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=700"
+            alt="Ice cream dessert">
+          <div class="food-info">
+            <h3>Vanilla Ice Cream</h3>
+            <p>Creamy and refreshing dessert.</p>
+            <div class="food-bottom">
+              <span class="price">$8.00</span>
+              <button class="order-button" data-food="Vanilla Ice Cream" data-price="8">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CHICKEN -->
+        <article class="food-card" data-category="main">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700"
+            alt="Delicious chicken meal">
+          <div class="food-info">
+            <h3>Special Chicken Meal</h3>
+            <p>Tender chicken served with fresh sides.</p>
+            <div class="food-bottom">
+              <span class="price">$20.00</span>
+              <button class="order-button" data-food="Special Chicken Meal" data-price="20">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section section-padding" id="about">
+    <div class="container about-grid">
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900"
+          alt="Restaurant dining experience">
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>We Make Every Meal Special</h2>
+        <p>
+          At Taste Haven, we believe good food brings people together.
+          Our goal is to serve delicious meals in a welcoming atmosphere.
+        </p>
+        <p>
+          Whether you are enjoying a meal with family or meeting friends,
+          we want every visit to be memorable.
+        </p>
+        <a href="#contact" class="main-button">Contact Us</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section section-padding" id="contact">
+    <div class="container contact-content">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Have a question or want to place an order?</p>
+
+      <a href="#" id="contactWhatsApp" class="main-button">
+        Chat With Us on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <h2>Taste<span>Haven</span></h2>
+      <p>Good Food. Great Moments.</p>
+      <p class="copyright">
+        &copy; <span id="year"></span> Taste Haven Restaurant.
+        All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
