@@ -1015,3 +1015,32 @@ img {
     height: 220px;
   }
 }
+/* DISCOUNT SUMMARY */
+
+#discountSummary {
+  background: #302d29;
+  border: 1px solid #e88b35;
+  border-radius: 10px;
+  padding: 18px;
+  margin-top: 15px;
+}
+
+#discountSummary p {
+  color: #e6dfd5;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+#discountSummary .discount-saving {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+#discountSummary .final-total {
+  color: #e88b35;
+  font-size: 20px;
+  font-weight: bold;
+  border-top: 1px solid #514c45;
+  padding-top: 12px;
+  margin-top: 12px;
+}
