@@ -26,6 +26,9 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Our Menu</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -43,6 +46,34 @@
         dining experiences.
       </p>
       <a href="#menu" class="main-button">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- SPECIAL DISCOUNT BANNER -->
+  <section class="discount-section">
+    <div class="discount-content container">
+
+      <div class="discount-text">
+        <p class="eyebrow">SPECIAL OFFER</p>
+        <h2>Enjoy <span>20% OFF</span></h2>
+        <h3>Your First Order!</h3>
+
+        <p>
+          Enjoy delicious meals at a special price.
+          Order today and treat yourself!
+        </p>
+
+        <a href="#menu" class="main-button">Order Now</a>
+
+        <small>*Sample promotion for this portfolio website.</small>
+      </div>
+
+      <div class="discount-image">
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800"
+          alt="Delicious beef burger">
+      </div>
+
     </div>
   </section>
 
@@ -66,7 +97,6 @@
 
       <!-- SHOPPING CART -->
       <div class="cart-summary">
-
         <h3>🛒 Your Order</h3>
 
         <div id="cartItems">
@@ -78,50 +108,32 @@
 
         <!-- CUSTOMER DELIVERY DETAILS -->
         <div class="customer-checkout">
-
           <h3>Delivery Details</h3>
 
           <label for="customerName">Full Name</label>
-          <input
-            type="text"
-            id="customerName"
-            placeholder="Enter your full name"
-            required
-          >
+          <input type="text" id="customerName"
+            placeholder="Enter your full name" required>
 
           <label for="customerPhone">Phone Number</label>
-          <input
-            type="tel"
-            id="customerPhone"
-            placeholder="Enter your phone number"
-            required
-          >
+          <input type="tel" id="customerPhone"
+            placeholder="Enter your phone number" required>
 
           <label for="customerAddress">Delivery Address</label>
-          <textarea
-            id="customerAddress"
-            placeholder="Enter your full delivery address"
-            required
-          ></textarea>
+          <textarea id="customerAddress"
+            placeholder="Enter your full delivery address" required></textarea>
 
           <label for="customerNote">Special Instructions (Optional)</label>
-          <textarea
-            id="customerNote"
-            placeholder="Any extra instructions?"
-          ></textarea>
-
+          <textarea id="customerNote"
+            placeholder="Any extra instructions?"></textarea>
         </div>
 
-        <!-- CLEAR CART BUTTON -->
         <button id="clearCartButton" class="remove-btn">
           Clear Cart
         </button>
 
-        <!-- WHATSAPP CHECKOUT -->
         <button id="checkoutButton" class="main-button">
           Checkout on WhatsApp
         </button>
-
       </div>
 
       <!-- FOOD MENU -->
@@ -253,6 +265,153 @@
     </div>
   </section>
 
+  <!-- FOOD GALLERY SECTION -->
+  <section class="gallery-section section-padding" id="gallery">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">A FEAST FOR YOUR EYES</p>
+        <h2>Our Food Gallery</h2>
+        <p>Discover some delicious meals from our kitchen.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700"
+            alt="Delicious chicken meal">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"
+            alt="Fresh beef burger">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=700"
+            alt="Italian pasta">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700"
+            alt="Fresh garden salad">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=700"
+            alt="Vanilla ice cream">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700"
+            alt="Healthy rice bowl">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS SECTION -->
+  <section class="reviews-section section-padding" id="reviews">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">CUSTOMER FEEDBACK</p>
+        <h2>What Our Customers Say</h2>
+        <p>Good food makes people happy. Here are some sample reviews.</p>
+      </div>
+
+      <div class="reviews-container">
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <p>
+            "The food was delicious, fresh and well prepared.
+            I really enjoyed it!"
+          </p>
+          <h3>Sarah Johnson</h3>
+          <span>Sample Customer</span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <p>
+            "Amazing service and tasty meals.
+            I would definitely order again."
+          </p>
+          <h3>Michael Brown</h3>
+          <span>Sample Customer</span>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <p>
+            "The burger was fantastic, and the ordering process
+            was very easy."
+          </p>
+          <h3>Emily Davis</h3>
+          <span>Sample Customer</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FREQUENTLY ASKED QUESTIONS -->
+  <section class="faq-section section-padding" id="faq">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">NEED HELP?</p>
+        <h2>Frequently Asked Questions</h2>
+        <p>Here are answers to some common questions.</p>
+      </div>
+
+      <div class="faq-container">
+
+        <details class="faq-item">
+          <summary>How can I place an order?</summary>
+          <p>
+            Choose your favourite meals, add them to your cart
+            and check out through WhatsApp.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you offer home delivery?</summary>
+          <p>
+            Customers can provide their delivery address when
+            placing an order. Delivery availability should be
+            confirmed with the restaurant.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I order more than one meal?</summary>
+          <p>
+            Yes. You can add different meals and quantities
+            to your shopping cart.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How can I contact Taste Haven?</summary>
+          <p>
+            You can contact us through the WhatsApp button
+            on this website.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT SECTION -->
   <section class="contact-section section-padding" id="contact">
     <div class="container contact-content">
@@ -278,6 +437,22 @@
     </div>
   </footer>
 
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a
+    href="https://wa.me/2347042302823"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Taste Haven on WhatsApp"
+  >
+    <span>Chat with us</span>
+    <strong>WhatsApp</strong>
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <a href="#home" class="back-to-top" aria-label="Back to top">
+    ↑
+  </a>
+
 </body>
 </html>
-
